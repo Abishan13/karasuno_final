@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - Karasuno{% endblock %}
+
+{% block content %}
+{#     <body style="height: 100%;"> #}
+    <style>
+        .footer-custom {
+            position:absolute;
+        }
+    </style> 
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+    <div id="contact">  
+            <strong>Karasuno</strong>
+            <hr>
+            06 10 20 40 50<br/>
+            01 11 22 44 55<br/> 
+            8 rue des lilas fleuris, 75000 PARIS<br/>
+            karasunoipssi@gmail.com<br/>
+            <hr>
+            <img src="{{asset('assets/img/twitter.png')}}" height="20px" alt="twitter"> KarasunoIPSSI
+            <br/><br/>
+            <img src="{{asset('assets/img/instagram.png')}}" height="20px" alt="instagram"> Karasuno_ipssi
+            <br/><br/>
+            <img src="{{asset('assets/img/facebook.png')}}" height="20px" alt="facebook"> Karasuno IPSSI
+            <br/><br/>
+
+
+        </div>
+    </div>
+    {# </body> #}
+
+{% endblock %}

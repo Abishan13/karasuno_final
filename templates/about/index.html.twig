@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Karasuno | Qui sommes-nous ? {% endblock %}
+
+{% block content %}
+
+    
+    <h2> Qui sommes-nous ? </h2>
+    
+    <hr>
+
+    <p class="aboutus">
+
+       Chez Karasuno, une petite, mais dynamique entreprise spécialisée dans les vêtements, nous sommes animés par la passion du bon plan et de l’efficacité du service client. 
+       C’est pourquoi nous nous engageons à vous apporter les deux. <br/><br/>
+
+       Notre mission est de vous offrir des produits qui prouvent que vous êtes importants pour nous. 
+       Non seulement nos produits sont au top de la tendance, mais ils sont aussi de la meilleure qualité.<br/><br/>
+
+       Nos clients restent au top de nos priorités et nous travaillons dur pour développer avec eux une relation sur le long terme, basée sur la confiance et l’authenticité.
+       Nous espérons que vous aimerez nos produits autant que nous aimons les créer pour vous.<br/><br/>
+    </p>
+
+    <hr>
+
+    <h2> Nos engagements </h2>
+    <br/>
+
+    <div class="row featurette">
+        <div class="col-md-4">
+            <img src="{{ asset('assets/img/eco.jpg') }}" class="img-eco" alt="Engagements">
+        </div>
+        <div class="col-md-8">
+            <p class="aboutus"> 
+                <br/><br/><br/>
+                L'objectif principal de notre activité est de tout faire pour respecter l'environnement et préserver la nature.
+                Nous vivons à une époque où les ressources naturelles se font de plus en plus rares et nous nous devons de trouver des solutions pour surmonter cette épreuve. <br/><br/>
+                Tous nos vêtements sont fabriqués avec des matériaux écologiques ou recyclés, et nos processus de fabrication n'empiètent pas sur la nature.
+            </p>
+        </div>
+        
+    </div>
+    <br/>
+
+    <hr>
+
+    <h2> Des questions ? </h2>
+    <br/>
+
+    <p class="aboutus">
+
+        N'hésitez pas à nous contacter ! <a href="{{path('contact')}}"> Rendez-vous ici. </a>
+
+    </p>
+
+{% endblock %}
