@@ -43,12 +43,12 @@ class ResetPasswordController extends AbstractController
                 $this->entityManager->flush();
 
                 // 2 : Envoyer un email à l'utilisateur avec un lien lui permettant de mettre à jour son mot de passe.
-                $url = $this->generateUrl('"http://safe-chamber-63087.herokuapp.com"/update_password', [
+                $url = $this->generateUrl('update_password', [
                     'token' => $reset_password->getToken()
                 ]);
 
                 $content = "Bonjour ".$user->getFirstname()."<br/>Vous avez demandé à réinitialiser votre mot de passe sur le site Karasuno.<br/><br/>";
-                $content .= "Merci de bien vouloir cliquer sur le lien suivant pour <a href='".$url."'>mettre à jour votre mot de passe</a>.";
+                $content .= "Merci de bien vouloir cliquer sur le lien suivant pour <a href='http://safe-chamber-63087.herokuapp.com/".$url."'>mettre à jour votre mot de passe</a>.";
 
                 $mail = new Mail();
                 $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getLastname(), 'Réinitialiser votre mot de passe sur Karasuno', $content);
