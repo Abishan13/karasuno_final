@@ -63,9 +63,8 @@ class ResetPasswordController extends AbstractController
     }
 
 
-    /**
-     * @Route("/modifier-mon-mot-de-passe/{token}", name="update_password")
-     */
+    
+    #[Route('/modifier-mon-mot-de-passe/{token}', name: 'update_password')]
     public function update(Request $request, $token, UserPasswordEncoderInterface $encoder)
     {
         $reset_password = $this->entityManager->getRepository(ResetPassword::class)->findOneByToken($token);
