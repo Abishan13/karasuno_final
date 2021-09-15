@@ -36,7 +36,9 @@ class OrderSuccessController extends AbstractController
     $this->entityManager->flush();
 
     $mail = new Mail();
-    $content = "Bonjour ".$order->getUser()->getFirstname()."<br/>Merci pour votre commande.<br><br/>";
+    $content = "Bonjour ".$order->getUser()->getFirstname()."<br/>Merci pour votre commande.<br><br>Voici les détails de votre commande :<br> 
+    Référence de ma commande : ".$order->getReference()."<br> 
+    Transporteur choisi : ".$order->getCarrierName()."";
     $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande Karasuno est bien validée.', $content);
         }
 
