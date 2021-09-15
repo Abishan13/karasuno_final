@@ -61,7 +61,7 @@ class OrderCrudController extends AbstractCrudController
 
         $url = $this->crudUrlGenerator->build()
             ->setController(OrderCrudController::class)
-            ->setAction(Action::INDEX)
+            ->setAction('index')
             ->generateUrl();
 
             $mail = new Mail();
