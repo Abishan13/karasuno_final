@@ -61,12 +61,12 @@ class OrderCrudController extends AbstractCrudController
 
         $url = $this->crudUrlGenerator->build()
             ->setController(OrderCrudController::class)
-           ->setAction('index')
+            ->setAction('detail')
             ->generateUrl();
 
             $mail = new Mail();
-            $content = "Bonjour ".$order->getUser()->getFirstname()."<br/>Votre commande est en cours de préparation<br><br/>";
-            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est en cours de préparation.', $content);
+            $content = "Bonjour ".$order->getUser()->getFirstname()."<br/>Bonjour ".$order->getUser()->getFirstname()."<br> Votre commande dont la référence est : <b>".$order->getReference()."<b/> est en cours de préparation.";
+            $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande Karasuno est en cours de préparation.', $content);
 
         return $this->redirect($url);
     }
@@ -81,7 +81,7 @@ class OrderCrudController extends AbstractCrudController
 
         $url = $this->crudUrlGenerator->build()
             ->setController(OrderCrudController::class)
-            ->setAction('index')
+            ->setAction('detail')
             ->generateUrl();
 
 
