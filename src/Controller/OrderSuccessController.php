@@ -37,9 +37,9 @@ class OrderSuccessController extends AbstractController
 
     $mail = new Mail();
     $content = "Bonjour ".$order->getUser()->getFirstname()."<br/>Merci pour votre commande.<br><br>Voici les détails de votre commande :<br> 
-    Référence de ma commande : ".$order->getReference()."<br> 
-    Transporteur choisi : ".$order->getCarrierName()."";
-    $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande Karasuno est bien validée.', $content);
+   <b> Référence de ma commande : <b/>".$order->getReference()."<br> 
+   <b> Votre colis vous sera livrée par <b/>".$order->getCarrierName()."";
+    $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), '<b> Votre commande Karasuno est bien validée.<b/>', $content);
         }
 
         return $this->render('order_success/index.html.twig', [
